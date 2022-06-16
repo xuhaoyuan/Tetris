@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>方块CC</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -15,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>3</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>
@@ -32,5 +34,42 @@
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array/>
+    <key>LSApplicationQueriesSchemes</key>
+      <array>
+        <string>weixin</string>
+        <string>wechat</string>
+        <string>weibosdk</string>
+        <string>mqqapi</string>
+        <string>itms-beta</string>
+        <string>mqq</string>
+        <string>taobao</string>
+        <string>weixinULAPI</string>
+      </array>
+      <key>LSRequiresIPhoneOS</key>
+      <true/>
+      <key>NSAppTransportSecurity</key>
+      <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <true/>
+      </dict>
+      <key>SKAdNetworkItems</key>
+      <array>
+        <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>f7s53z58qe.skadnetwork</string>
+        </dict>
+        <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>238da6jt44.skadnetwork</string>
+        </dict>
+        <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>x2jnk7ly8j.skadnetwork</string>
+        </dict>
+        <dict>
+          <key>SKAdNetworkIdentifier</key>
+          <string>22mmun2rn5.skadnetwork</string>
+        </dict>
+      </array>
 </dict>
 </plist>

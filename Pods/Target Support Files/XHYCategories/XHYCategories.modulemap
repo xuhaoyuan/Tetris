@@ -1,0 +1,6 @@
+framework module XHYCategories {
+  umbrella header "XHYCategories-umbrella.h"
+
+  export *
+  module * { export * }
+}

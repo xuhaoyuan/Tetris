@@ -17,21 +17,24 @@ class GameBoard: UIView {
         return Int(height - safeArea.top - safeArea.bottom - 104.0)/brickSize
     }
 //    static let rows = 22
-    static let cols = 10
+    static let cols = 11
     static let gap = 1
     static let brickSize = Int(UIScreen.main.bounds.size.width*(24/375.0))
     static let smallBrickSize = Int(UIScreen.main.bounds.size.width*(18/375.0))
     static let width  = GameBoard.brickSize * GameBoard.cols + GameBoard.gap * (GameBoard.cols+1)
     static let height = GameBoard.brickSize * GameBoard.rows + GameBoard.gap * (GameBoard.rows+1)
-    static let EmptyColor = UIColor.black
-    static let strokeColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+    static let EmptyColor = UIColor(r: 0, g: 0, b: 0, a: 0.2)
+//    static let strokeColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+    static let strokeColor = UIColor(r: 0, g: 0, b: 0, a: 0.2)
+
     
     var board = [[UIColor]]()
     var currentBrick:Brick?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(red:0.21, green:0.21, blue:0.21, alpha:1.0)
+        backgroundColor = UIColor.clear
+//        self.backgroundColor = UIColor(red:0.21, green:0.21, blue:0.21, alpha:1.0)
         self.clear()
     }
     
@@ -224,7 +227,6 @@ class GameBoard: UIView {
 
     
     override func draw(_ rect: CGRect) {
-        // draw game board
         for r in  0..<GameBoard.rows {
             for c in 0..<GameBoard.cols {
                 let color = self.board[r][c]
@@ -242,16 +244,15 @@ class GameBoard: UIView {
             }
         }
     }
-
     
     func drawAtRow(_ r:Int, col c:Int, color:UIColor!) {
-        let context = UIGraphicsGetCurrentContext()
         let block = CGRect(x: CGFloat((c+1)*GameBoard.gap + c*GameBoard.brickSize),
             y: CGFloat((r+1)*GameBoard.gap + r*GameBoard.brickSize),
             width: CGFloat(GameBoard.brickSize),
             height: CGFloat(GameBoard.brickSize))
         
             if color == GameBoard.EmptyColor {
+                let context = UIGraphicsGetCurrentContext()
                 GameBoard.strokeColor.set()
                 context?.fill(block)
             } else {

@@ -1,0 +1,20 @@
+PODS:
+  - SnapKit (5.0.1)
+  - XHYCategories (0.1.0)
+
+DEPENDENCIES:
+  - SnapKit
+  - XHYCategories
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
+    - XHYCategories
+
+SPEC CHECKSUMS:
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  XHYCategories: f204d41adf4d28679181e2832e55106c45f55ebe
+
+PODFILE CHECKSUM: df78ad9f5892baf5e966e45ff41d10900fffe37a
+
+COCOAPODS: 1.11.2

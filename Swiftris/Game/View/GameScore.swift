@@ -14,7 +14,6 @@ class GameScore: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor(red:0.21, green:0.21, blue:0.21, alpha:1.0)
         
         levelLabel.translatesAutoresizingMaskIntoConstraints = false
         levelLabel.textColor = UIColor.white

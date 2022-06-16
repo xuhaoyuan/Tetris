@@ -11,9 +11,8 @@ import SnapKit
 
 class SwiftrisViewController: UIViewController {
 
-    private var contentView: UIView = UIView()
-
-    private var swiftris:Swiftris?
+    private var swiftris: Swiftris?
+    private let image = UIImageView(image: UIImage(named: "background1"))
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +28,17 @@ class SwiftrisViewController: UIViewController {
     }
     
     func initializeGame() {
-        view.addSubview(contentView)
-        contentView.snp.makeConstraints { make in
+        view.backgroundColor = UIColor.white
+        view.addSubview(image)
+        image.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-
         DispatchQueue.main.async {
-            let gameView = GameView(self.contentView)
+            let gameView = GameView()
+            self.view.addSubview(gameView)
+            gameView.snp.makeConstraints { make in
+                make.edges.equalToSuperview()
+            }
             self.swiftris = Swiftris(gameView: gameView)
         }
     }

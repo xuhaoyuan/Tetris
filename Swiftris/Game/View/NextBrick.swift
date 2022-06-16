@@ -15,11 +15,11 @@ class NextBrick: UIView {
 
    private var gameButton = GameButton(title: "Play", frame: CGRect.zero)
    private var stopButton = GameButton(title: "Stop", frame: CGRect.zero)
-   private var exchangeButton = GameButton(title: "Change", frame: CGRect.zero)
+    private var exchangeButton = UIButton(image: UIImage(named: "exchange"), bgColor: .clear, borderWidth: 2, borderColor: UIColor.white, cornerRadius: 5)
     
     override init(frame: CGRect) {
         super.init(frame: CGRect.zero)
-        self.backgroundColor = UIColor(red:0.21, green:0.21, blue:0.21, alpha:1.0)
+        self.backgroundColor = UIColor.clear
         
         NotificationCenter.default.addObserver(self, selector: #selector(newBrickGenerated),
                                                name: .NewBrickDidGenerateNotification,
@@ -86,10 +86,8 @@ class NextBrick: UIView {
         stopButton.addTarget(self, action: #selector(NextBrick.gameStop(_:)), for: .touchUpInside)
         addSubview(self.stopButton)
 
-        exchangeButton.layer.borderColor = UIColor.white.cgColor
         exchangeButton.layer.borderWidth = 2
         exchangeButton.layer.cornerRadius = 5
-        exchangeButton.backgroundColor = UIColor.white
         addSubview(exchangeButton)
         exchangeButton.addTapGesture { [weak self] in
             self?.exchangeHandler?()
